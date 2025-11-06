@@ -15,12 +15,16 @@ Here is the list of invariants we came up with for the Dual Railroad Problem (yo
 
 
 ## Varying invariants
+Does there exist a sequence of events, such that an invariant is not longer true?
+* We discussed the answer to this question generally, and we decided that in an ideal world, all of our invariants would be true all the time.
+* Then (after further thought) we wrote down some examples of situations that can arise and invalidate some of the invariants that we came up with. These can be seen in the image that contains Timothy's FSM (bottom right of the image)
+
 One counter example that we found that invalidates the example_FSM is:
-* first a nb train approaches, followed by a sb_train, after the timer elapses, the nb train departs (causing the arms to raise to the arms up position) but the sb train is still present. This results in unsafe behavior of the state machine.
+* First a nb train approaches, followed by a sb_train, after the timer elapses, the nb train departs but the sb train is still present. This results in unsafe behavior where the arms are put into a raised postion but there is a train still present.
 
 ## Check Your Work
 Tyler's FSM:
-* no counter examples were found with Tyler's FSM
+* No counter examples were found with Tyler's FSM
 
 ![FSM1](Railroad_FSM.drawio.png)
 
@@ -64,7 +68,7 @@ Below we filled in the table in order to map out every possible input to the out
 | 21     | Power is never interrupted         |
 | 22     | Weather will never damage the equipment         |
 | 23     | Only one train can be present at a time (for a single direction)         |
-| 24     | The alarm pnly activates when a train is approaching         |
+| 24     | The alarm only activates when a train is approaching         |
 
 
 ## Specification vs. implementation
